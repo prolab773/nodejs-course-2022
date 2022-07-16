@@ -1,1 +1,5 @@
-/npm-projects/1/node_modules
+/npm-projects/1-first-npm-project/node_modules
+/npm-projects/2-promises/node_modules
+/npm-projects/3-events/node_modules
+/npm-projects/4-streams/node_modules
+/npm-projects/5-express-tutorial/node_modules
