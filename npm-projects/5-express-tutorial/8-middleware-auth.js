@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan')
+
 const logger = require('./logger');
 const authorize = require('./authorize');
 // req=> middleware => res
@@ -9,7 +9,7 @@ const authorize = require('./authorize');
 
 // 1. use vs route
 // 2. options - our own / express / third party
-app.use(morgan('tiny'))
+
 // app.use([authorize, logger])
 
 app.get('/', (req,res) => {
@@ -24,7 +24,7 @@ app.get('/api/products', (req,res) => {
     res.send('Products')
 })
 
-app.get('/api/items',(req,res) => {
+app.get('/api/items',[authorize, logger], (req,res) => {
     console.log(req.user);
     res.send('Items')
 })
